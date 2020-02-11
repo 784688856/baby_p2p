@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>yanxue-framework-safe</artifactId>
+    <artifactId>baby_p2p-framework-safe</artifactId>
     <description>安全控制模块，所有设计认证和授权先经过这个模块，通过后放行至资源模块</description>
 
 </project>

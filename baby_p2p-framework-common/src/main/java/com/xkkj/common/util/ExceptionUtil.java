@@ -7,7 +7,7 @@ import java.io.StringWriter;
 /**
  * @description: ExceptionUtil
  * @author: xuhao
- * @time: 2020/1/6 10:31
+ * @time: 2020/2/11 10:31
  */
 public class ExceptionUtil {
     public static String getMessage(Exception e) {

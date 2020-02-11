@@ -11,7 +11,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <!--基础公共类的版本-->
-    <artifactId>yanxue-framework-common</artifactId>
+    <artifactId>baby_p2p-framework-common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <description>公共类</description>
     <dependencies>

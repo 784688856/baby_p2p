@@ -5,7 +5,7 @@ import com.aliyun.oss.model.CannedAccessControlList;
 import com.xkkj.aliyunoss.service.FileService;
 import com.xkkj.aliyunoss.util.ConstantPropertiesUtil;
 import com.xkkj.common.constants.ResultCodeEnum;
-import com.xkkj.common.exception.YanXueException;
+import com.xkkj.common.exception.BabyP2pException;
 import org.joda.time.DateTime;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -67,7 +67,7 @@ public class FileServiceImpl implements FileService {
             //获取url地址
             uploadUrl = "http://" + bucketName + "." + endPoint + "/" + fileUrl;
         } catch (IOException e) {
-            throw new YanXueException(ResultCodeEnum.FILE_UPLOAD_ERROR);
+            throw new BabyP2pException(ResultCodeEnum.FILE_UPLOAD_ERROR);
         }
         //返回文件请求地址
         return uploadUrl;

@@ -6,13 +6,13 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * @description: YanXueException
+ * @description: BabyP2pException
  * @author: xuhao
- * @time: 2020/1/6 10:31
+ * @time: 2020/2/11 10:31
  */
 @Data
 @ApiModel(value = "全局异常")
-public class YanXueException extends RuntimeException {
+public class BabyP2pException extends RuntimeException {
     @ApiModelProperty(value = "状态码")
     private Integer code;
     /**
@@ -20,7 +20,7 @@ public class YanXueException extends RuntimeException {
      * @param code
      * @param message
      */
-    public YanXueException(Integer code, String message) {
+    public BabyP2pException(Integer code, String message) {
         super(message);
         this.code=code;
     }
@@ -28,15 +28,15 @@ public class YanXueException extends RuntimeException {
      * 接收枚举类型
      * @param resultCodeEnum
      */
-    public YanXueException(ResultCodeEnum resultCodeEnum) {
+    public BabyP2pException(ResultCodeEnum resultCodeEnum) {
         super(resultCodeEnum.getMessage());
         this.code = resultCodeEnum.getCode();
     }
 
     @Override
     public String toString() {
-        return "YanXueException{" +
-                "message=" + this.getMessage() +
+        return "BabyP2pException{" +
+                "msg=" + this.getMessage() +
                 ", code=" + code +
                 '}';
     }

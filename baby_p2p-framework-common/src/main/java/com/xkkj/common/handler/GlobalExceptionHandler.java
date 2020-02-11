@@ -1,7 +1,7 @@
 package com.xkkj.common.handler;
 
 import com.xkkj.common.constants.ResultCodeEnum;
-import com.xkkj.common.exception.YanXueException;
+import com.xkkj.common.exception.BabyP2pException;
 import com.xkkj.common.util.ExceptionUtil;
 import com.xkkj.common.vo.Result;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * @description: GlobalExceptionHandler 统一异常处理器
  * @author: xuhao
- * @time: 2020/1/6 10:31
+ * @time: 2020/2/11 10:31
  */
 @ControllerAdvice
 @Slf4j
@@ -41,9 +41,9 @@ public class GlobalExceptionHandler {
         log.error(ExceptionUtil.getMessage(e));
         return Result.setResultBody(ResultCodeEnum.JSON_PARSE_ERROR);
     }
-    @ExceptionHandler(YanXueException.class)
+    @ExceptionHandler(BabyP2pException.class)
     @ResponseBody
-    public Result error(YanXueException e){
+    public Result error(BabyP2pException e){
         log.error(ExceptionUtil.getMessage(e));
         return Result.error().message(e.getMessage()).code(e.getCode());
     }

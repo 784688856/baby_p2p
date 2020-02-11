@@ -10,12 +10,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>yanxue-framework-oss</artifactId>
+    <artifactId>baby_p2p-framework-oss</artifactId>
     <description>文件图片资源上传模块</description>
     <dependencies>
         <dependency>
             <groupId>com.xkkj</groupId>
-            <artifactId>yanxue-framework-common</artifactId>
+            <artifactId>baby_p2p-framework-common</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

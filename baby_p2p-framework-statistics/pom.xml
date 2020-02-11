@@ -10,7 +10,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>yanxue-framework-statistics</artifactId>
+    <artifactId>baby_p2p-framework-statistics</artifactId>
     <description>宝贝投统计模块，通过springcloud调用其他模块的数据返回给前端</description>
 
 </project>
