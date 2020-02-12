@@ -1,16 +1,14 @@
 package com.xkkj.code.pojo;
 
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.annotation.IdType;
-import java.util.Date;
-import com.baomidou.mybatisplus.annotation.Version;
-import com.baomidou.mybatisplus.annotation.TableId;
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -48,7 +46,8 @@ public class LoginLog implements Serializable {
     @ApiModelProperty(value = "登录结果(1:成功，0:失败)")
     private Integer loginResult;
 
-    @ApiModelProperty(value = "创建时间")
+    @ApiModelProperty(value = "创建时间",example = "2019-01-01 8:00:00")
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
 

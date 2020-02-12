@@ -1,7 +1,10 @@
 package com.xkkj.code.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xkkj.code.pojo.LoginLog;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.xkkj.code.query.LoginLogQuery;
 
 /**
  * <p>
@@ -13,4 +16,12 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface LoginLogService extends IService<LoginLog> {
 
+    /**
+     * xh
+     * 查询登录日志分页
+     * @param pageParam
+     * @param loginLogQuery
+     * @return
+     */
+    IPage<LoginLog> query(Page<LoginLog> pageParam, LoginLogQuery loginLogQuery);
 }
