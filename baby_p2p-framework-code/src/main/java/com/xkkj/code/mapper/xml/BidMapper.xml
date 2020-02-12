@@ -2,4 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xkkj.code.mapper.BidMapper">
 
+    <select id="getByBorrowId" parameterType="String">
+        SELECT * FROM t_bid WHERE borrow_id = {borrowId} group by create_time
+    </select>
 </mapper>
