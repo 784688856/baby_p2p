@@ -1,0 +1,56 @@
+// Colors
+$base-color: #FF2F47;
+$accent: #4caf50;
+$red: #ff5722;
+$yellow: #ffeb3b;
+$grey: #efefef;
+$black: #000;
+$black-light: #555;
+
+// Container
+$header-height: 4.5em;
+$container-width: 75em;
+$mobile-container-width: 100%;
+
+// Mobile
+$mobile-aside-bg: #34393d;
+$mobile-aisde-transition: all 0.35s ease-out;
+
+// Other
+$radius: 2px;
+$navbar-height: 4.5em;
+
+// Basic stylings
+$br: 4px;
+$xs-pad: 4px;
+$sm-pad: 8px;
+$md-pad: 1.2em;
+$lg-pad: 1.5em;
+$xlg-pad: 3em;
+$trans: .3s;
+
+
+// Font
+$sans-serif: specialSymbol, DINRegular, -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Segoe UI", "Microsoft YaHei", "微软雅黑", sans-serif;
+$serif: Georgia, Times, 'Times New Roman', serif;
+$monospace: Menlo, Monaco, Consolas, 'Courier New', monospace;
+$font-family: $sans-serif;
+
+// Typography
+$font-size-base: 14px;
+$font-size-large: 1.2rem;
+$font-size-small: .85rem;
+$font-size-h1: 2rem;
+$font-size-h2: 1.75rem;
+$font-size-h3: 1.5rem;
+$font-size-h4: 1.2rem;
+$font-size-h5: 1rem;
+$font-size-h6: $font-size-small;
+$line-height-base: 1.4;
+
+
+@mixin text-overflow() {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
