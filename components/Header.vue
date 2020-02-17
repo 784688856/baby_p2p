@@ -5,15 +5,6 @@
         <span class="welcome-text">欢迎您！</span>
       </el-col>
       <el-col :span="12" class="nav-right">
-        <span class="nav-right-span">
-          <a href="javascript:void(0)" class="phone-a">
-            手机版
-            <i class="el-icon-arrow-down" />
-            <div class="gzh-div">
-              <!-- <img src="../../../static/images/xcx-code.jpg"/> -->
-            </div>
-          </a>
-        </span>
         <span class="nav-right-span account-name" v-if="this.$store.state.user.userInfo">
           <nuxt-link to="/center/perinfo" class="account-name-a">
             <i class="account-text">{{this.$store.state.user.userInfo.username}}</i>
@@ -21,20 +12,22 @@
           </nuxt-link>
           <ul class="my-ul">
             <li class="my-li">
-              <nuxt-link to="/center/perinfo" class="my-a">个人中心</nuxt-link>
+              <nuxt-link to="/home/profile" class="my-a">个人中心</nuxt-link>
             </li>
             <li class="my-li">
-              <a class="my-a" herf="javascript:void(0)">评价晒单</a>
-            </li>
-            <li class="my-li">
-              <nuxt-link to="/center/collect" class="my-a">我的收藏</nuxt-link>
+              <nuxt-link to="/center/perinfo" class="my-a">账户充值</nuxt-link>
             </li>
             <li class="my-li">
               <a class="my-a" @click="loginOut">退出登录</a>
             </li>
           </ul>
         </span>
-        <nuxt-link class="account-login-a" to="/login" v-else>登录</nuxt-link>
+        <span v-else>
+          <nuxt-link class="account-login-a" to="/helper">&nbsp;&nbsp;帮助</nuxt-link>
+          <nuxt-link class="account-login-a" to="/register">&nbsp;&nbsp;快速注册</nuxt-link>
+          <nuxt-link class="account-login-a" to="/login">&nbsp;&nbsp;登录</nuxt-link>
+          <nuxt-link class="account-login-a" to="/home">&nbsp;&nbsp;首页</nuxt-link>
+        </span>
       </el-col>
     </el-row>
   </div>

@@ -2,7 +2,7 @@
   <div class="login-box">
     <div class="login-header">
       <div class="header-content">
-        <nuxt-link class="logo-a" to="/" alt="爱内购">
+        <nuxt-link class="logo-a" to="/" alt="Baby投">
           <!-- <img src="../static/images/aLogo.png" /> -->
         </nuxt-link>
       </div>
@@ -72,6 +72,7 @@ import service from '~/api'
 import md5 from 'js-md5'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 export default {
+  
   name: 'login',
   layout: 'public',
   data() {

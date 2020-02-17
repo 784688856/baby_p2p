@@ -1,4 +1,8 @@
 module.exports = {
+  // 单页面模式，右键查看源代码，内容很少，注意：不是f12，是右键源代码能看到的内容，f12看element两者都是一样的
+  // mode:'spa',
+  // 服务器渲染模式
+  mode:'universal',
   /*
   ** Headers of the page
   */

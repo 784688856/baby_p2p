@@ -11,6 +11,11 @@ export function getMember(id) {
     return ax.get(`user/get/${id}`).then(res => res.data)
 }
 
+// 测试
+export function test() {
+    return ax.get(`user/get/test`).then(res => res.data)
+}
+
 
 // 上传文件
 export function uploadFilesSave(formData, params) {
