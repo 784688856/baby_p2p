@@ -13,4 +13,13 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UserAccountService extends IService<UserAccount> {
 
+    // TODO ----- yb专区，卢本伟专业护法，外来人员不得入侵 -----
+
+
+    UserAccount checkLogin(UserAccount userAccount);
+
+
+
+
+    // TODO yb专区结束 ----- ----- ----- ----- ----- ----- -
 }

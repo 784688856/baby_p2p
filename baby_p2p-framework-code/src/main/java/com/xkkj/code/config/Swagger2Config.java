@@ -19,14 +19,14 @@ public class Swagger2Config {
                 .groupName("CodeApi")
                 .apiInfo(adminApiInfo())
                 .select()
-                .paths(Predicates.and(PathSelectors.regex("/code/.*")))
+                .paths(Predicates.and(PathSelectors.regex("/*/.*")))
                 .build();
     }
 
     private ApiInfo adminApiInfo(){
         return new ApiInfoBuilder()
-                .title("后台管理系统-课程中心API文档")
-                .description("本文档描述了微服务接口定义")
+                .title("Come on Baby ---- API文档")
+                .description("宝贝投详细接口文档")
                 .version("1.0")
                 .build();
     }
