@@ -1,0 +1,54 @@
+package com.xkkj.code.pojo;
+
+import com.baomidou.mybatisplus.annotation.*;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
+
+import java.io.Serializable;
+import java.util.Date;
+
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author xkkj
+ * @since 2020-02-11
+ */
+@Data
+@EqualsAndHashCode(callSuper = false)
+@Accessors(chain = true)
+@TableName("t_login_log")
+@ApiModel(value="LoginLog对象", description="")
+public class LoginLog implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty(value = "id")
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
+
+    @ApiModelProperty(value = "客户端ip地址")
+    private String ip;
+
+    @ApiModelProperty(value = "登录时间")
+    private Date loginTime;
+
+    @ApiModelProperty(value = "登录用户名")
+    private String username;
+
+    @ApiModelProperty(value = "账户类型(1:前台用户, 2:运营人员)")
+    private Integer accountType;
+
+    @ApiModelProperty(value = "登录结果(1:成功，0:失败)")
+    private Integer loginResult;
+
+    @ApiModelProperty(value = "创建时间",example = "2019-01-01 8:00:00")
+    @TableField(fill = FieldFill.INSERT)
+    private Date createTime;
+
+
+}
