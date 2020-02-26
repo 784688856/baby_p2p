@@ -72,7 +72,7 @@ import service from '~/api'
 import md5 from 'js-md5'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 export default {
-  
+
   name: 'login',
   layout: 'public',
   data() {

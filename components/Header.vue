@@ -15,7 +15,7 @@
               <nuxt-link to="/home/profile" class="my-a">个人中心</nuxt-link>
             </li>
             <li class="my-li">
-              <nuxt-link to="/center/perinfo" class="my-a">账户充值</nuxt-link>
+              <nuxt-link to="/home/profile/recharge" class="my-a">账户充值</nuxt-link>
             </li>
             <li class="my-li">
               <a class="my-a" @click="loginOut">退出登录</a>

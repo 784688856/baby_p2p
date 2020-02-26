@@ -4,12 +4,12 @@ import service from '~/api'
 // 此中间件配置了nuxt.config.js的router中了，这是全局的，所有的路由组件只要变化了都会触发此中间件
 // 如果想给单个组件配置路由拦截，则需要在组件中引用middleware
 export default function ({ store, route, redirect, req }) {
-  const whiteList = ['/home', '/home/investment'] // 免登白名单（放行首页 我要投资等路由）
+  const whiteList = ['/home', '/home/investment','/register'] // 免登白名单（放行首页 我要投资等路由）
 
   // 没有用户信息就表示没有登录，除了白名单以外的路由，如果没有登录就跳到登录页面
   if (store.state.user.userInfo == null) {
     if (route.path != '/login' && whiteList.indexOf(route.path) === -1) {
-      alert('没登陆就想看，想多了！')
+      // alert('没登陆就想看，想多了！')
       return redirect('/login')
     }
   }

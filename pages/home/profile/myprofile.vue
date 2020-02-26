@@ -1,9 +1,9 @@
 <template>
   <div class="person-center">
     <div class="person-header">个人信息</div>
-    <div class="base-section clearfix">
+    <div class="base-section">
       <div class="avatar fl">
-        <img class="avatar-img" :src="userInfo.HeadUrl" />
+        <img class="avatar-img" :src="userInfo.avatar" />
         <el-upload
           class="avatar-uploader"
           action
@@ -19,17 +19,19 @@
       <div class="base-text fl">
         <dl>
           <dt>基本信息</dt>
-          <dd>昵称：{{userInfo.RealName}}</dd>
-          <dd>性别：{{userInfo.Sex}}</dd>
-          <dd>我的生日：{{userInfo.Birthday}}</dd>
-          <dd>我的手机：{{userInfo.Mobile}}</dd>
-          <dd>电子邮箱：{{userInfo.Email}}</dd>
-          <dd>公司名称：{{userInfo.GName}}</dd>
-          <dd>我的工号：{{userInfo.SKYNO}}</dd>
+          <dd>昵称：{{this.$store.state.user.userInfo.username}}</dd>
+          <dd>真实姓名：{{userInfo.realname}}</dd>
+          <dd>身份证号：{{userInfo.idCardNumber}}</dd>
+          <dd>手机号码：{{userInfo.phoneNumber}}</dd>
+          <dd>个人学历：{{userInfo.eduBackgroundId}}</dd>
+          <dd>年收入：{{userInfo.incomeLevelId}}</dd>
+          <!-- <dd>婚姻情况：{{userInfo.marriageId}}</dd> -->
+          <dd>住房条件：{{userInfo.houseConditionId}}</dd>
+          <dd>邮箱：{{userInfo.email}}</dd>
         </dl>
       </div>
       <div class="oprator">
-        <a href="javascript:void(0)" class="base-a" @click="updateInfoDialog = true">
+        <a href="javascript:void(0)" class="base-a" @click="edit">
           <i class="el-icon-edit-outline" />编辑
         </a>
       </div>
@@ -44,34 +46,32 @@
           label-width="75px"
           class="clearfix"
         >
-          <el-form-item label="我的姓名" class="np-item" prop="common">
-            <el-input v-model="infoForm.RealName" placeholder="请输入姓名"></el-input>
+          <!-- <el-form-item label="昵称" class="np-item" prop="common">
+            <el-input v-model="infoForm.realname" placeholder="请输入昵称"></el-input>
+          </el-form-item>-->
+          <el-form-item label="真实姓名" class="np-item" prop="common">
+            <el-input v-model="infoForm.realname" placeholder="请输入真实姓名"></el-input>
           </el-form-item>
-          <el-form-item label="我的性别" class="np-item" prop="common">
-            <el-radio-group v-model="infoForm.Sex">
-              <el-radio label="男"></el-radio>
-              <el-radio label="女"></el-radio>
-            </el-radio-group>
+          <el-form-item label="身份证号" class="np-item" prop="common">
+            <el-input v-model="infoForm.idCardNumber" placeholder="请输入身份证号"></el-input>
           </el-form-item>
-          <el-form-item label="我的生日" class="np-item" prop="common">
-            <el-date-picker
-              v-model="infoForm.Birthday"
-              type="date"
-              value-format="yyyy-MM-dd"
-              placeholder="选择日期"
-            ></el-date-picker>
+          <el-form-item label="手机号码" class="np-item" prop="common">
+            <el-input v-model="infoForm.phoneNumber" placeholder="请输入您的手机号码"></el-input>
           </el-form-item>
-          <el-form-item label="我的手机" class="np-item" prop="Mobile">
-            <el-input v-model="infoForm.Mobile" placeholder="请输入您的手机号码"></el-input>
-          </el-form-item>
-          <el-form-item label="电子邮箱" class="np-item" prop="Email">
+          <!-- <el-form-item label="电子邮箱" class="np-item" prop="Email">
             <el-input v-model="infoForm.Email" placeholder="请输入您的电子邮箱"></el-input>
+          </el-form-item>-->
+          <el-form-item label="个人学历" class="np-item" prop="common">
+            <el-input v-model="infoForm.eduBackgroundId" placeholder="请输入您的个人学历"></el-input>
           </el-form-item>
-          <el-form-item label="公司名称" class="np-item" prop="common">
-            <el-input v-model="infoForm.GName" placeholder="请输入您的公司名称"></el-input>
+          <el-form-item label="年收入" class="np-item" prop="common">
+            <el-input v-model="infoForm.incomeLevelId" placeholder="请输入您的年收入"></el-input>
           </el-form-item>
-          <el-form-item label="我的工号" class="np-item" prop="common">
-            <el-input v-model="infoForm.SKYNO" placeholder="请输入您的工号"></el-input>
+          <el-form-item label="婚姻情况" class="np-item" prop="common">
+            <el-input v-model="infoForm.marriageId" placeholder="请输入您的婚姻情况"></el-input>
+          </el-form-item>
+          <el-form-item label="住房条件" class="np-item" prop="common">
+            <el-input v-model="infoForm.houseConditionId" placeholder="请输入您的住房条件"></el-input>
           </el-form-item>
         </el-form>
       </div>
@@ -113,17 +113,10 @@ export default {
       }
     }
     return {
+      userInfo: '',
       imageUrl: '',
       updateInfoDialog: false,
-      infoForm: {
-        RealName: '',
-        Sex: '',
-        Birthday: '',
-        Mobile: '',
-        Email: '',
-        GName: '',
-        SKYNO: ''
-      },
+      infoForm: '',
       info_rules: { // 登录验证  
         Mobile: [
           { validator: check_phone, trigger: 'blur' },
@@ -135,6 +128,12 @@ export default {
     }
   },
   methods: {
+    edit() {
+      // 通过Json使得值传递，不穿的引用
+      this.infoForm = JSON.parse(JSON.stringify(this.userInfo));
+      this.updateInfoDialog = true
+
+    },
     updateUserInfoData() {
       let that = this
       this.$refs['infoForm'].validate((valid) => {
@@ -146,29 +145,15 @@ export default {
       });
     },
     handleUpdateUserInfoData() {
-      let authParams = {
-        sign: this.$store.state.token.token,
-        userid: this.$store.state.token.userid,
-        pwd: this.$store.state.token.pwd
-      }
-      let dat = JSON.parse(JSON.stringify(this.$store.state.user.userInfo))
-      dat.RealName = this.infoForm.RealName
-      dat.Sex = this.infoForm.Sex
-      dat.Birthday = this.infoForm.Birthday
-      dat.Mobile = this.infoForm.Mobile
-      dat.Email = this.infoForm.Email
-      dat.GName = this.infoForm.GName
-      dat.SKYNO = this.infoForm.SKYNO
-      let form = new FormData()
-      form.append("json", JSON.stringify(dat))
-      this.updateInfoDialog = false
-      service.updateMember(form, authParams).then(res => {
-        if (res.state != 0) {
-          this.$message.error(res.msg)
-        } else {
-
+      service.updateMember(this.infoForm).then(res => {
+        if (res.success) {
           this.$store.commit('user/updateUserInfo', this.infoForm)
           this.$message.success('更新成功!')
+          this.updateInfoDialog = false
+          this.$router.go("0")
+
+        } else {
+          this.$message.error(res.msg)
         }
       })
     },
@@ -189,66 +174,35 @@ export default {
       let formData = new FormData()
       formData.append("file", event.file)
       //图片提交服务器
-      service.uploadFilesSave(formData, { sign: this.$store.state.token.token, userid: this.$store.state.token.userid, pwd: this.$store.state.token.pwd }).then(res => {
-        let headUrl = "https://pic.skyworthds.com/File/Member/ineigopj/" + res.fname
-        that.$store.dispatch('user/updatedUserInfoAvatar', headUrl)
+      service.uploadFilesSave(formData).then(res => {
+        console.log(res.data)
+        this.userInfo.avatar = res.data.url
+
+        // that.$store.dispatch('user/updatedUserInfoAvatar', headUrl)
 
       });
     },
     handleAvatarSuccess(res, file) {
-
+      console.log('666')
     },
-    correspondence() {
-      this.infoForm.RealName = this.userInfo.RealName
-      this.infoForm.Sex = this.userInfo.Sex
-      this.infoForm.Birthday = this.userInfo.Birthday
-      this.infoForm.Mobile = this.userInfo.Mobile
-      this.infoForm.Email = this.userInfo.Email
-      this.infoForm.GName = this.userInfo.GName
-      this.infoForm.SKYNO = this.userInfo.SKYNO
-    }
   },
   mounted() {
-    this.correspondence()
-  },
-  computed: {
-    userInfo() {
-      let info = {
-        RealName: '',
-        Sex: '',
-        Birthday: '',
-        Mobile: '',
-        Email: '',
-        GName: '',
-        SKYNO: '',
-        HeadUrl: ''
-      }
-      if (this.$store.state.user.userInfo) {
-        let ui = this.$store.state.user.userInfo
-        info.RealName = ui.RealName
-        info.Mobile = ui.Mobile
-        info.Email = ui.Email
-        info.GName = ui.GName
-        info.SKYNO = ui.SKYNO
-        info.Birthday = ui.Birthday
-        info.Sex = ui.Sex == 1 ? "男" : "女"
-        if (/^data/.test(ui.HeadUrl)) {
-          info.HeadUrl = ""
-        } else {
-          info.HeadUrl = ui.HeadUrl
-        }
-      }
-      return info
-    }
-  }
 
+  },
+  created() {
+    // 返回用户详细信息
+    service.getDetailInfo(this.$store.state.user.userInfo.id).then(res => {
+      console.log(res.data)
+      this.userInfo = res.data
+    })
+  },
 }
 
 </script>
 
 <style lang="scss" scoped>
 .person-center {
-  height: 914px;
+  height: 600px;
   .person-header {
     height: 88px;
     line-height: 88px;

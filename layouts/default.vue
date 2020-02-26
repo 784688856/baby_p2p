@@ -8,7 +8,7 @@
     <!-- /内容区域 -->
 
     <!-- 公共底 -->
-    <footer id="footer" style="position:fixed;bottom:0px;">
+    <footer class="footer">
       <Footer />
     </footer>
     <!-- /公共底 -->
@@ -41,5 +41,11 @@ export default {
 }
 
 </script>
-<style >
+<style scoped>
+.footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  margin-left: 38%;
+}
 </style>

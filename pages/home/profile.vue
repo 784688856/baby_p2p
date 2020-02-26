@@ -17,13 +17,13 @@
               <i class="el-icon-menu"></i>我的账户
             </template>
             <el-menu-item index="2-1">
-              <nuxt-link to="/home/profile/myprofile">个人资料</nuxt-link>
+              <nuxt-link to="/home/profile/myprofile" tag="li" active-class="current">个人资料</nuxt-link>
             </el-menu-item>
             <el-menu-item index="2-2">
-              <nuxt-link to="/home/profile/bindBankCard">绑定银行卡</nuxt-link>
+              <nuxt-link to="/home/profile/bindBankCard" tag="li" active-class="current">绑定银行卡</nuxt-link>
             </el-menu-item>
             <el-menu-item index="2-3">
-              <nuxt-link to="/home/profile/loginHistory">登录记录</nuxt-link>
+              <nuxt-link to="/home/profile/loginHistory" tag="li" active-class="current">登录记录</nuxt-link>
             </el-menu-item>
           </el-submenu>
           <el-submenu index="3">
@@ -31,8 +31,12 @@
               <i class="el-icon-setting"></i>资产详情
             </template>
             <el-menu-item index="3-1">账户流水</el-menu-item>
-            <el-menu-item index="3-2">我要充值</el-menu-item>
-            <el-menu-item index="3-3">余额提现</el-menu-item>
+            <el-menu-item index="3-2">
+              <nuxt-link to="/home/profile/rechargeList" tag="li" active-class="current">我要充值</nuxt-link>
+            </el-menu-item>
+            <el-menu-item index="3-3">
+              <nuxt-link to="/home/profile/withdraw" tag="li" active-class="current">余额提现</nuxt-link>
+            </el-menu-item>
           </el-submenu>
         </el-menu>
       </el-aside>
@@ -69,7 +73,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .el-header {
   background-color: #b3c0d1;
   color: #333;
