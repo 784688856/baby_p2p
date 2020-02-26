@@ -12,6 +12,11 @@
     <artifactId>baby_p2p-framework-code</artifactId>
 
     <dependencies>
+        <!--com.aliyun.oss-->
+        <dependency>
+            <groupId>com.aliyun.oss</groupId>
+            <artifactId>aliyun-sdk-oss</artifactId>
+        </dependency>
         <!--服务注册-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

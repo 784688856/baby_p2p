@@ -25,6 +25,16 @@ import java.util.Date;
 @ApiModel(value="UserWallet对象", description="")
 public class UserWallet implements Serializable {
 
+
+
+    public UserWallet(String accountId, Long availableAmount) {
+        this.accountId = accountId;
+        this.availableAmount = availableAmount;
+    }
+
+    public UserWallet() {
+    }
+
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "账户id")

@@ -25,6 +25,13 @@ import java.util.Date;
 @ApiModel(value="UserInfo对象", description="")
 public class UserInfo implements Serializable {
 
+    public UserInfo() {
+    }
+
+    public UserInfo(String accountId) {
+        this.accountId = accountId;
+    }
+
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "账户id")
@@ -42,6 +49,9 @@ public class UserInfo implements Serializable {
 
     @ApiModelProperty(value = "手机号码")
     private String phoneNumber;
+
+    @ApiModelProperty(value = "邮箱")
+    private String email;
 
     @ApiModelProperty(value = "收入等级id")
     private Integer incomeLevelId;

@@ -7,6 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -21,8 +22,9 @@ public class WithdrawControllerYB {
 
     @ApiOperation("前台用户，发起账户提现")
     @PostMapping("/user/withdraw/add")
-    public Result withdraw(Withdraw withdraw){
-        withdrawService.save(withdraw);
+    public Result withdraw(@RequestBody Withdraw withdraw){
+        System.out.println(withdraw);
+        withdrawService.add(withdraw);
         return Result.ok();
     }
 }

@@ -12,7 +12,7 @@ import java.util.Date;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author xkkj
@@ -22,7 +22,7 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("t_user_account")
-@ApiModel(value="UserAccount对象", description="")
+@ApiModel(value = "UserAccount对象", description = "")
 public class UserAccount implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -30,6 +30,7 @@ public class UserAccount implements Serializable {
     @ApiModelProperty(value = "账户id")
     @TableId(value = "id", type = IdType.ID_WORKER_STR)
     private String id;
+
 
     @ApiModelProperty(value = "用户名")
     private String username;
@@ -49,7 +50,7 @@ public class UserAccount implements Serializable {
     @ApiModelProperty(value = "最后登录时间")
     private Date lastLoginTime;
 
-    @ApiModelProperty(value = "创建时间",example = "2019-01-01 8:00:00")
+    @ApiModelProperty(value = "创建时间", example = "2019-01-01 8:00:00")
     @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
