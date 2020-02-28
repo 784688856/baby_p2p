@@ -46,11 +46,13 @@ public class SystemDictionaryItemController {
         try {
             boolean save = SystemDictionaryItemService.save(systemDictionaryItem);
             if (save==true){
-                log.debug("新增数据项成功！");
+                log.info("新增数据项成功！");
+                return Result.ok().success(true);
             }else {
-                log.debug("新增数据项失败!");
+                log.info("新增数据项失败!");
+                return Result.error().success(false);
             }
-            return Result.ok().success(true);
+
         } catch (Exception e) {
             e.printStackTrace();
             return Result.error().success(false);
@@ -100,11 +102,12 @@ public class SystemDictionaryItemController {
         try {
             boolean b = SystemDictionaryItemService.updateById(SystemDictionaryItem);
             if (b==true){
-                log.debug("修改数据项成功！");
+                log.info("修改数据项成功！");
+                return Result.ok().success(true);
             }else {
-                log.debug("修改数据项失败!");
+                log.info("修改数据项失败!");
             }
-            return Result.ok().success(true);
+            return Result.error().success(false);
         } catch (Exception e) {
             e.printStackTrace();
             return Result.error().success(false);

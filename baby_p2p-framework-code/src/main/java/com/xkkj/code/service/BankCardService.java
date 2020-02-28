@@ -13,4 +13,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface BankCardService extends IService<BankCard> {
 
+    // TODO yb 专区
+    BankCard getInfoByUserId(String uid);
+    // TODO yb 专区
 }

@@ -46,11 +46,13 @@ public class SystemDictionaryController {
         try {
             boolean save = systemDictionaryService.save(systemDictionary);
             if (save==true){
-                log.debug("新增数据组成功！");
+                log.info("新增数据组成功！");
+                return Result.ok().success(true);
             }else {
-                log.debug("新增数据组失败!");
+                log.info("新增数据组失败!");
+                return Result.error().success(false);
             }
-            return Result.ok().success(true);
+
         } catch (Exception e) {
             e.printStackTrace();
             return Result.error().success(false);
@@ -100,11 +102,12 @@ public class SystemDictionaryController {
         try {
             boolean b = systemDictionaryService.updateById(systemDictionary);
             if (b==true){
-                log.debug("修改数据组成功！");
+                log.info("修改数据组成功！");
+                return Result.ok().success(true);
             }else {
-                log.debug("修改数据组失败!");
+                log.info("修改数据组失败!");
+                return Result.error().success(false);
             }
-            return Result.ok().success(true);
         } catch (Exception e) {
             e.printStackTrace();
             return Result.error().success(false);

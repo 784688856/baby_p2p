@@ -27,6 +27,11 @@ public class UserInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public UserInfo(String accountId) {
+        this.accountId = accountId;
+    }
+    public UserInfo() {
+    }
     @ApiModelProperty(value = "账户id")
     @TableId(value = "account_id", type = IdType.ID_WORKER_STR)
     private String accountId;
@@ -39,6 +44,9 @@ public class UserInfo implements Serializable {
 
     @ApiModelProperty(value = "身份证号码")
     private String idCardNumber;
+
+    @ApiModelProperty(value = "邮箱")
+    private String email;
 
     @ApiModelProperty(value = "手机号码")
     private String phoneNumber;

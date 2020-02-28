@@ -27,6 +27,13 @@ public class UserWallet implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public UserWallet(String accountId, Long availableAmount) {
+        this.accountId = accountId;
+        this.availableAmount = availableAmount;
+    }
+
+    public UserWallet() {
+    }
     @ApiModelProperty(value = "账户id")
     @TableId(value = "account_id", type = IdType.ID_WORKER_STR)
     private String accountId;
