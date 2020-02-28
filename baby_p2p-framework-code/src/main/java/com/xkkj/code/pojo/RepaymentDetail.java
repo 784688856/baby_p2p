@@ -50,13 +50,13 @@ public class RepaymentDetail implements Serializable {
     private String borrowTitle;
 
     @ApiModelProperty(value = "本期还款总金额(利息+本金)(单位：分)")
-    private Long totalAmount;
+    private Integer totalAmount;
 
     @ApiModelProperty(value = "本期还款本金(单位；分)")
-    private Long principal;
+    private Integer principal;
 
     @ApiModelProperty(value = "本期还款总利息(单位：分)")
-    private Long interest;
+    private Integer interest;
 
     @ApiModelProperty(value = "还款期数(第几月还款)")
     private Integer period;

@@ -3,6 +3,7 @@ package com.xkkj.code.pojo;
 import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import io.swagger.models.auth.In;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -47,13 +48,13 @@ public class Repayment implements Serializable {
     private Date repaymentTime;
 
     @ApiModelProperty(value = "本期还款总金额(单位：分)")
-    private Long totalAmount;
+    private Integer totalAmount;
 
     @ApiModelProperty(value = "本期还款本金(单位：分)")
-    private Long principal;
+    private Integer principal;
 
     @ApiModelProperty(value = "本期还款总利息(单位：分)")
-    private Long interest;
+    private Integer interest;
 
     @ApiModelProperty(value = "还款期数(第几期)")
     private Integer period;

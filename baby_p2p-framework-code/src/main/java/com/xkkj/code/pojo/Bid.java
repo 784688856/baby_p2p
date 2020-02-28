@@ -38,10 +38,10 @@ public class Bid implements Serializable {
     private String borrowTitle;
 
     @ApiModelProperty(value = "投标金额")
-    private Long bidAmount;
+    private Integer bidAmount;
 
     @ApiModelProperty(value = "投标利息")
-    private Long bidInterest;
+    private Integer bidInterest;
 
     @ApiModelProperty(value = "年化率")
     private Integer yearRate;
