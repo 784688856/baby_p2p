@@ -12,32 +12,42 @@
             <el-menu-item index="1-3">借款明细</el-menu-item>
             <el-menu-item index="1-3">我的还款</el-menu-item>
           </el-submenu>
+
           <el-submenu index="2">
             <template slot="title">
               <i class="el-icon-menu"></i>我的账户
             </template>
+
             <el-menu-item index="2-1">
-              <nuxt-link to="/home/profile/myprofile" tag="li" active-class="current">个人资料</nuxt-link>
+              <nuxt-link to="/home/profile/myprofile" class="lala">个人资料</nuxt-link>
             </el-menu-item>
+
             <el-menu-item index="2-2">
-              <nuxt-link to="/home/profile/bindBankCard" tag="li" active-class="current">绑定银行卡</nuxt-link>
+              <nuxt-link to="/home/profile/bindBankCard" class="lala" active-class="current">绑定银行卡</nuxt-link>
             </el-menu-item>
+            
             <el-menu-item index="2-3">
-              <nuxt-link to="/home/profile/loginHistory" tag="li" active-class="current">登录记录</nuxt-link>
+              <nuxt-link to="/home/profile/loginHistory" class="lala" active-class="current">登录记录</nuxt-link>
             </el-menu-item>
+
           </el-submenu>
+
+
+
           <el-submenu index="3">
             <template slot="title">
               <i class="el-icon-setting"></i>资产详情
             </template>
             <el-menu-item index="3-1">账户流水</el-menu-item>
             <el-menu-item index="3-2">
-              <nuxt-link to="/home/profile/rechargeList" tag="li" active-class="current">我要充值</nuxt-link>
+              <nuxt-link to="/home/profile/rechargeList" class="lala" active-class="current">我要充值</nuxt-link>
             </el-menu-item>
             <el-menu-item index="3-3">
-              <nuxt-link to="/home/profile/withdraw" tag="li" active-class="current">余额提现</nuxt-link>
+              <nuxt-link to="/home/profile/withdraw" class="lala" active-class="current">余额提现</nuxt-link>
             </el-menu-item>
           </el-submenu>
+
+
         </el-menu>
       </el-aside>
 
@@ -82,5 +92,10 @@ export default {
 
 .el-aside {
   color: #333;
+}
+
+.lala{
+  text-decoration: none;
+  color: black;
 }
 </style>
