@@ -27,7 +27,7 @@ import java.util.Map;
  * @since 2020-02-11
  */
 @RestController
-@Api(value = "前台投资接口")
+@Api(tags = "前台投资接口")
 @RequestMapping("/finance/bid")
 public class BidController {
     @Autowired

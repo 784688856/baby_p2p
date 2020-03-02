@@ -26,7 +26,7 @@ import java.util.Map;
  * @since 2020-02-11
  */
 @RestController
-@Api("还款明细管理")
+@Api(tags = "还款明细管理")
 @RequestMapping("/finance/repayment/detail")
 public class RepaymentDetailController {
     @Autowired

@@ -27,7 +27,7 @@ import java.util.Map;
  * @since 2020-02-11
  */
 @RestController
-@Api(value = "还款模块接口")
+@Api(tags = "还款模块接口")
 @RequestMapping("/finance/repayment")
 public class RepaymentController {
     @Autowired
