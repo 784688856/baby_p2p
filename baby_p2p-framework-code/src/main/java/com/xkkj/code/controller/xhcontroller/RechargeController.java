@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -83,7 +84,6 @@ public class RechargeController {
             //默认审核中
             recharge.setState(1);
             //充值时间
-            recharge.setRechargeTime(new Date());
             boolean save = rechargeService.save(recharge);
             if (save==true){
                 one.setBalance(one.getBalance()-recharge.getAmount());
@@ -149,12 +149,12 @@ public class RechargeController {
                     userWallet.setAvailableAmount(wallet.getAvailableAmount()+recharge1.getAmount());
                     userWalletService.saveOrUpdate(userWallet);
                 }else if(recharge.getState()==0){
-                    QueryWrapper<BankCard> queryWrapper=new QueryWrapper<>();
-                    queryWrapper.eq("user_id",recharge1.getUserId());
-                    BankCard one = bankCardService.getOne(queryWrapper);
-                    BankCard bankCard=new BankCard();
-                    bankCard.setBalance(one.getBalance()+recharge1.getAmount());
-                    bankCardService.update(bankCard,queryWrapper);
+//                    QueryWrapper<BankCard> queryWrapper=new QueryWrapper<>();
+//                    queryWrapper.eq("user_id",recharge1.getUserId());
+//                    BankCard one = bankCardService.getOne(queryWrapper);
+//                    BankCard bankCard=new BankCard();
+//                    bankCard.setBalance(one.getBalance()+recharge1.getAmount());
+//                    bankCardService.update(bankCard,queryWrapper);
                 }
                 log.debug("充值审核成功！");
 
@@ -163,6 +163,33 @@ public class RechargeController {
             }
             return Result.ok().success(true);
         } catch (BabyP2pException e) {
+            e.printStackTrace();
+            return Result.error().success(false);
+        }
+    }
+
+    @ApiOperation(value = "新增充值信息（2）----xh")
+    @PostMapping("saveRecharge")
+    public Result saveRecharge(@ApiParam(name = "recharge", value = "用户充值信息管理实体") Recharge recharge){
+        try {
+            SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+            SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd");
+            try {
+                Date date = sdf1.parse(recharge.getRechargeTime());//拿到Date对象
+                String str = sdf2.format(date);//输出格式：2017-01-22 09:28:33
+              recharge.setRechargeTime(str);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            //充值时间
+            boolean save = rechargeService.save(recharge);
+            if (save==true){
+                log.debug("充值成功！");
+            }else {
+                log.debug("充值失败");
+            }
+            return Result.ok().success(true);
+        } catch (Exception e) {
             e.printStackTrace();
             return Result.error().success(false);
         }

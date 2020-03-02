@@ -34,6 +34,13 @@ public class Recharge implements Serializable {
     @ApiModelProperty(value = "充值账户id")
     private String userId;
 
+    @ApiModelProperty(value = "平台账号")
+    private String bankCardName;
+
+    @ApiModelProperty(value = "审核人")
+    private String applyName;
+
+
     @ApiModelProperty(value = "用户名")
     private String username;
 
@@ -47,7 +54,7 @@ public class Recharge implements Serializable {
     private Long amount;
 
     @ApiModelProperty(value = "充值日期")
-    private Date rechargeTime;
+    private String rechargeTime;
 
     @ApiModelProperty(value = "审核状态( 0:审核拒绝  1:审核中  2:审核通过 )")
     private Integer state;
