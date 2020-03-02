@@ -24,4 +24,17 @@
       <module name="baby_p2p-framework-statistics" target="1.8" />
     </bytecodeTargetLevel>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="baby_p2p-center-eureka" options="-parameters" />
+      <module name="baby_p2p-framework-code" options="-parameters" />
+      <module name="baby_p2p-framework-common" options="-parameters" />
+      <module name="baby_p2p-framework-oss" options="-parameters" />
+      <module name="baby_p2p-framework-safe" options="-parameters" />
+      <module name="baby_p2p-framework-statistics" options="-parameters" />
+    </option>
+  </component>
+>>>>>>> 67593911a5ca30ee88388f6d83aa8b1ac19434a1
 </project>

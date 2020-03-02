@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/baby_p2p.iml" filepath="$PROJECT_DIR$/.idea/baby_p2p.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/baby.iml" filepath="$PROJECT_DIR$/.idea/baby.iml" />
+>>>>>>> 67593911a5ca30ee88388f6d83aa8b1ac19434a1
       <module fileurl="file://$PROJECT_DIR$/baby_p2p-center-eureka/baby_p2p-center-eureka.iml" filepath="$PROJECT_DIR$/baby_p2p-center-eureka/baby_p2p-center-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/baby_p2p-framework-code/baby_p2p-framework-code.iml" filepath="$PROJECT_DIR$/baby_p2p-framework-code/baby_p2p-framework-code.iml" />
       <module fileurl="file://$PROJECT_DIR$/baby_p2p-framework-common/baby_p2p-framework-common.iml" filepath="$PROJECT_DIR$/baby_p2p-framework-common/baby_p2p-framework-common.iml" />
