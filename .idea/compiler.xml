@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="baby_p2p-center-eureka" />
+        <module name="baby_p2p-framework-code" />
+        <module name="baby_p2p-framework-common" />
+        <module name="baby_p2p-framework-oss" />
+        <module name="baby_p2p-framework-safe" />
+        <module name="baby_p2p-framework-statistics" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="baby_p2p-center-eureka" target="1.8" />
+      <module name="baby_p2p-framework-code" target="1.8" />
+      <module name="baby_p2p-framework-common" target="1.8" />
+      <module name="baby_p2p-framework-oss" target="1.8" />
+      <module name="baby_p2p-framework-parent" target="1.8" />
+      <module name="baby_p2p-framework-safe" target="1.8" />
+      <module name="baby_p2p-framework-statistics" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

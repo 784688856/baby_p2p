@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/baby_p2p.iml" filepath="$PROJECT_DIR$/.idea/baby_p2p.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baby_p2p-center-eureka/baby_p2p-center-eureka.iml" filepath="$PROJECT_DIR$/baby_p2p-center-eureka/baby_p2p-center-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baby_p2p-framework-code/baby_p2p-framework-code.iml" filepath="$PROJECT_DIR$/baby_p2p-framework-code/baby_p2p-framework-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baby_p2p-framework-common/baby_p2p-framework-common.iml" filepath="$PROJECT_DIR$/baby_p2p-framework-common/baby_p2p-framework-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baby_p2p-framework-oss/baby_p2p-framework-oss.iml" filepath="$PROJECT_DIR$/baby_p2p-framework-oss/baby_p2p-framework-oss.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baby_p2p-framework-parent/baby_p2p-framework-parent.iml" filepath="$PROJECT_DIR$/baby_p2p-framework-parent/baby_p2p-framework-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baby_p2p-framework-safe/baby_p2p-framework-safe.iml" filepath="$PROJECT_DIR$/baby_p2p-framework-safe/baby_p2p-framework-safe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baby_p2p-framework-statistics/baby_p2p-framework-statistics.iml" filepath="$PROJECT_DIR$/baby_p2p-framework-statistics/baby_p2p-framework-statistics.iml" />
+    </modules>
+  </component>
+</project>
