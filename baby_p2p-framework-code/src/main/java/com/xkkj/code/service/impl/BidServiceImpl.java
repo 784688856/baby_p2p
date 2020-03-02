@@ -94,7 +94,7 @@ public class BidServiceImpl extends ServiceImpl<BidMapper, Bid> implements BidSe
     public void add(String bidUserId, String bidUsername, String borrowId, Integer bidAmount) {
         //在前端判断金额是否符合要求(大于50且是50的倍数且小于等于借款金额)
         //1.查询该借款标的信息，和用户金额(UserWallet)
-        Borrow borrow = new Borrow();//调用查询接口(borrowId)
+        Borrow borrow = borrowService.getById(borrowId);//调用查询接口(borrowId)
         UserWallet userWallet = new UserWallet();//调用查询接口(bidUserId)
         if ((borrow.getBorrowAmount()-borrow.getCurrentBidAmount())>=bidAmount&&bidAmount<=userWallet.getAvailableAmount()){
             //2.判断是否是同一投资人在同一借款标上投资
@@ -120,15 +120,15 @@ public class BidServiceImpl extends ServiceImpl<BidMapper, Bid> implements BidSe
             }
             /*3.修改借款表(borrow)的以投资数量(bid_num)加1、当前以投资金额(current_bid_amount)，
                 以bidAmount为条件调用借款表修改接口*/
-//            borrow.setBidNum(borrow.getBidNum()+1);
-//            borrow.setCurrentBidAmount(borrow.getCurrentBidAmount()+bidAmount);
-//            borrowService.updateById(borrow);
+            borrow.setBidNum(borrow.getBidNum()+1);
+            borrow.setCurrentBidAmount(borrow.getCurrentBidAmount()+bidAmount);
+            borrowService.updateById(borrow);
             /*4.修改用户可用金额       需要提供接口*/
 //            userWallet.setAvailableAmount(userWallet.getAvailableAmount()-bidAmount);
 //            userWalletService.updateById(userWallet);
 
         }else{
-            System.out.println("头多钱了，报错");
+            System.out.println("投多钱了，报错");
         }
 
 

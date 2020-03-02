@@ -25,6 +25,11 @@ public class RepaymentDetailServiceImpl extends ServiceImpl<RepaymentDetailMappe
     @Autowired
     RepaymentDetailMapper repaymentDetailMapper;
 
+    /**
+     * 分页查询收款明细
+     * @param repaymentQuery
+     * @return
+     */
     @Override
     public IPage<RepaymentDetail> getQuery(RepaymentQuery repaymentQuery) {
         Page<RepaymentDetail> repaymentDetailPage = new Page<>(repaymentQuery.getCurrentPage(),repaymentQuery.getPageSize());
