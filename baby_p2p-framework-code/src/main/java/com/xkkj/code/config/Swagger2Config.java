@@ -19,7 +19,7 @@ public class Swagger2Config {
                 .groupName("CodeApi")
                 .apiInfo(adminApiInfo())
                 .select()
-                .paths(Predicates.and(PathSelectors.regex("/code/.*")))
+                .paths(Predicates.and(PathSelectors.regex("/*/.*")))
                 .build();
     }
 
