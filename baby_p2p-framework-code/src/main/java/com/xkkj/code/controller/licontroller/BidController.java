@@ -67,6 +67,5 @@ public class BidController {
         bidService.add(bidUserId,bidUsername,borrowId,bidAmount);
         return Result.ok();
     }
-
 }
 

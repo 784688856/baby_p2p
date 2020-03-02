@@ -4,6 +4,7 @@ package com.xkkj.code.controller.xhcontroller;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.xkkj.code.pojo.AdminBankCard;
+import com.xkkj.code.pojo.vo.BankCardOptionVo;
 import com.xkkj.code.query.AdminBankCardQuery;
 import com.xkkj.code.service.AdminBankCardService;
 import com.xkkj.common.constants.ResultCodeEnum;
@@ -19,7 +20,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -109,6 +112,19 @@ public class AdminBankCardController {
             e.printStackTrace();
             return Result.error().success(false);
         }
+    }
+    @ApiOperation(value = "查询所有系统银行卡下拉选项----xh")
+    @GetMapping("findOption")
+    public Result findOption() {
+        List<AdminBankCard> list = adminBankCardService.list(null);
+        List<BankCardOptionVo> bankCardOptionVoList=new ArrayList<>();
+        for (int i = 0 ;i < list.size(); i++) {
+            BankCardOptionVo bankCardOptionVo=new BankCardOptionVo();
+            bankCardOptionVo.setValue('('+list.get(i).getBankName()+')'+list.get(i).getCardNumber()+list.get(i).getBranchName());
+            bankCardOptionVo.setLabel('('+list.get(i).getBankName()+')'+list.get(i).getCardNumber()+list.get(i).getBranchName());
+            bankCardOptionVoList.add(bankCardOptionVo);
+        }
+        return Result.ok().result(bankCardOptionVoList);
     }
 }
 
